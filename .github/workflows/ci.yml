@@ -28,12 +28,13 @@ jobs:
         run: cargo check -p cricket-protocol --no-default-features --locked
       - name: Windows type and dependency check
         env:
-          CC_x86_64_pc_windows_msvc: clang-cl
-          AR_x86_64_pc_windows_msvc: llvm-lib
+          AR_x86_64_pc_windows_msvc: llvm-ar
           CFLAGS_x86_64_pc_windows_msvc: /clang:-ffreestanding /DRING_CORE_NOSTDLIBINC
         run: |
           sudo apt-get update
           sudo apt-get install -y clang llvm lld
+          ln -s "$(command -v clang)" "$RUNNER_TEMP/clang-cl"
+          export CC_x86_64_pc_windows_msvc="$RUNNER_TEMP/clang-cl"
           if cargo check --workspace --target x86_64-pc-windows-msvc --locked > "$RUNNER_TEMP/windows-check.log" 2>&1; then
             cat "$RUNNER_TEMP/windows-check.log"
           else
