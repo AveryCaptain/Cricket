@@ -1,0 +1,9 @@
+[package]
+name = "cricket-server"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+cricket-gateway = { path = "../cricket-gateway" }
+cricket-protocol = { path = "../cricket-protocol" }

@@ -1,0 +1,10 @@
+[package]
+name = "cricket-novel"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+cricket-agent = { path = "../cricket-agent" }
+cricket-memory = { path = "../cricket-memory" }
+cricket-protocol = { path = "../cricket-protocol" }

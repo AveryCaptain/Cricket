@@ -1,0 +1,9 @@
+[package]
+name = "cricket-memory"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+cricket-protocol = { path = "../cricket-protocol" }
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls"] }

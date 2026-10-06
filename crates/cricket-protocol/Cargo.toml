@@ -1,0 +1,14 @@
+[package]
+name = "cricket-protocol"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[features]
+default = []
+ffi = ["dep:uniffi"]
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+thiserror = "1"
+uniffi = { version = "0.28", optional = true }

@@ -1,0 +1,9 @@
+[package]
+name = "cricket-tools"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+cricket-memory = { path = "../cricket-memory" }
+cricket-protocol = { path = "../cricket-protocol" }

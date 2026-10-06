@@ -1,0 +1,10 @@
+[package]
+name = "cricket-code"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+cricket-agent = { path = "../cricket-agent" }
+cricket-protocol = { path = "../cricket-protocol" }
+cricket-tools = { path = "../cricket-tools" }

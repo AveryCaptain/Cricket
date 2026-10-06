@@ -1,0 +1,21 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/cricket-protocol",
+    "crates/cricket-gateway",
+    "crates/cricket-agent",
+    "crates/cricket-memory",
+    "crates/cricket-tools",
+    "crates/cricket-skills",
+    "crates/cricket-novel",
+    "crates/cricket-code",
+    "crates/cricket-ffi",
+    "crates/cricket-server",
+    "crates/cricket-cli",
+]
+
+[profile.release]
+opt-level = "s"
+lto = "thin"
+codegen-units = 1
+strip = true
