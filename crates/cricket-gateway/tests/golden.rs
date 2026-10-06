@@ -24,6 +24,11 @@ fn openai_text() {
 }
 
 #[test]
+fn openai_compatible_uses_same_wire_contract() {
+    verify(ProviderId::OpenaiCompatible, "openai", "reasoning");
+}
+
+#[test]
 fn openai_unicode() {
     verify(ProviderId::Openai, "openai", "unicode");
 }
