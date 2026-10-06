@@ -19,6 +19,7 @@
 | 3 | [docs/03-ui-spec.md](docs/03-ui-spec.md) | Codex 风格 UI 设计规范、波浪等待动画（Wave Dots）与精确计时器实现规格 |
 | 4 | [docs/04-roadmap.md](docs/04-roadmap.md) | 16 周里程碑计划、验收标准、CI/CD 流水线、风险登记册 |
 | 5 | [docs/05-deployment.md](docs/05-deployment.md) | 服务器安全加固、部署拓扑（Docker Compose + Caddy）、备份与监控 |
+| — | [prompts/README.md](prompts/README.md) | **AI 接力施工提示词包**：Phase 0–9 每阶段一份独立提示词（幂等可重跑、先读文档后施工、验收门不过不放行） |
 
 ## 2. 核心定位
 
