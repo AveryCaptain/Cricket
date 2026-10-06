@@ -1,0 +1,54 @@
+# ══ Rust ═══════════════════════════════════════════════
+/target/
+**/target/
+**/*.rs.bk
+
+# ══ Node / 前端（apps/desktop）═════════════════════════
+node_modules/
+apps/desktop/dist/
+apps/desktop/src-tauri/gen/schemas/
+*.local
+
+# ══ iOS / Xcode（apps/ios）════════════════════════════
+build/
+DerivedData/
+xcuserdata/
+*.xcuserdata/
+*.xcuserstate
+*.ipa
+*.dSYM
+*.dSYM.zip
+Carthage/Build/
+
+# ══ Tauri 打包产物 ════════════════════════════════════
+*.app/
+*.dmg
+*.exe.mdb
+bundle/
+
+# ══ 密钥与凭据 —— 绝不入库（见 docs/05-deployment.md）══
+.env
+.env.*
+*.pem
+*.key
+*.p12
+secrets/
+id_rsa*
+id_ed25519*
+
+# ══ IDE / 编辑器 ══════════════════════════════════════
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ══ 操作系统 ═════════════════════════════════════════
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ══ 测试与临时 ═══════════════════════════════════════
+/coverage/
+/fixtures/**/tmp/
+/tmp/
+*.log
