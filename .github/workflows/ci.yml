@@ -26,6 +26,8 @@ jobs:
         run: cargo test --workspace --locked
       - name: Default protocol without FFI
         run: cargo check -p cricket-protocol --no-default-features --locked
+      - name: Optional UniFFI contract compatibility
+        run: cargo check --workspace --all-features --locked
       - name: Windows type and dependency check
         env:
           AR_x86_64_pc_windows_msvc: llvm-ar
@@ -51,6 +53,11 @@ jobs:
         run: |
           cargo install cargo-deny --version 0.20.2 --locked
           cargo deny check bans licenses
+          cargo deny --all-features check bans licenses
+      - name: Security audit including optional dependencies
+        run: |
+          cargo install cargo-audit --version 0.22.2 --locked
+          cargo audit --deny warnings
       - name: CLI mock smoke
         run: cargo run -p cricket-cli --locked -- chat --provider mock --fixture fixtures/golden/openai/tool.sse
   windows:

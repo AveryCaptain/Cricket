@@ -4,6 +4,15 @@ all-features = false
 [licenses]
 confidence-threshold = 0.8
 allow = ["MIT", "Apache-2.0", "BSD-3-Clause", "ISC", "Unicode-3.0", "CDLA-Permissive-2.0"]
+# UniFFI is the project's selected optional FFI framework; its source is MPL-2.0.
+exceptions = [
+    { name = "uniffi", allow = ["MPL-2.0"] },
+    { name = "uniffi_core", allow = ["MPL-2.0"] },
+    { name = "uniffi_internal_macros", allow = ["MPL-2.0"] },
+    { name = "uniffi_macros", allow = ["MPL-2.0"] },
+    { name = "uniffi_meta", allow = ["MPL-2.0"] },
+    { name = "uniffi_pipeline", allow = ["MPL-2.0"] },
+]
 
 [licenses.private]
 ignore = true

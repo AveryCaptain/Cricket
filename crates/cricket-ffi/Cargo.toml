@@ -11,4 +11,4 @@ ffi = ["dep:uniffi", "cricket-protocol/ffi"]
 [dependencies]
 cricket-agent = { path = "../cricket-agent" }
 cricket-protocol = { path = "../cricket-protocol" }
-uniffi = { version = "0.28", optional = true }
+uniffi = { version = "0.32.2", optional = true }
