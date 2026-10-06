@@ -1,0 +1,36 @@
+[
+  {
+    "type": "message_start",
+    "message_id": "gemini-reasoning"
+  },
+  {
+    "type": "reasoning_delta",
+    "message_id": "gemini-reasoning",
+    "text": "Compare evidence before answering."
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-reasoning",
+    "text": "The result is 42."
+  },
+  {
+    "type": "usage",
+    "usage": {
+      "input_tokens": 11,
+      "output_tokens": 17,
+      "cached_tokens": 3,
+      "reasoning_tokens": 5
+    }
+  },
+  {
+    "type": "finish",
+    "message_id": "gemini-reasoning",
+    "finish": "stop",
+    "usage": {
+      "input_tokens": 11,
+      "output_tokens": 17,
+      "cached_tokens": 3,
+      "reasoning_tokens": 5
+    }
+  }
+]

@@ -1,0 +1,8 @@
+data: {"responseId":"gemini-reasoning","candidates":[{"index":0,"content":{"role":"model","parts":[]}}]}
+
+data: {"responseId":"gemini-reasoning","candidates":[{"index":0,"content":{"role":"model","parts":[{"text":"Compare evidence before answering.","thought":true}]}}]}
+
+data: {"responseId":"gemini-reasoning","candidates":[{"index":0,"content":{"role":"model","parts":[{"text":"The result is 42."}]}}]}
+
+data: {"responseId":"gemini-reasoning","candidates":[{"index":0,"content":{"role":"model","parts":[]},"finishReason":"STOP"}],"usageMetadata":{"promptTokenCount":11,"candidatesTokenCount":17,"cachedContentTokenCount":3,"thoughtsTokenCount":5,"totalTokenCount":33}}
+

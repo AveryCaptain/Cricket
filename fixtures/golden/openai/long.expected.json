@@ -1,0 +1,517 @@
+[
+  {
+    "type": "message_start",
+    "message_id": "openai-long"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "000:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "001:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "002:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "003:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "004:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "005:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "006:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "007:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "008:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "009:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "010:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "011:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "012:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "013:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "014:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "015:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "016:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "017:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "018:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "019:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "020:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "021:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "022:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "023:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "024:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "025:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "026:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "027:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "028:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "029:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "030:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "031:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "032:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "033:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "034:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "035:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "036:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "037:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "038:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "039:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "040:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "041:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "042:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "043:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "044:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "045:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "046:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "047:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "048:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "049:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "050:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "051:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "052:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "053:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "054:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "055:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "056:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "057:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "058:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "059:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "060:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "061:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "062:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "063:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "064:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "065:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "066:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "067:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "068:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "069:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "070:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "071:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "072:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "073:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "074:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "075:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "076:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "077:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "078:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "079:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "080:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "081:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "082:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "083:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "084:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "085:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "086:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "087:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "088:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "089:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "090:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "091:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "092:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "093:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "094:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "095:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "096:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "097:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "098:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-long",
+    "text": "099:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "finish",
+    "message_id": "openai-long",
+    "finish": "stop",
+    "usage": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cached_tokens": 0,
+      "reasoning_tokens": 0
+    }
+  }
+]

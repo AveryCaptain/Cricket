@@ -1,0 +1,10 @@
+data: {"id":"openai-usage","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"role":"assistant"},"finish_reason":null}]}
+
+data: {"id":"openai-usage","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"content":"Hello Cricket."},"finish_reason":null}]}
+
+data: {"id":"openai-usage","object":"chat.completion.chunk","choices":[{"index":0,"delta":{},"finish_reason":"stop"}]}
+
+data: {"id":"openai-usage","choices":[],"usage":{"prompt_tokens":11,"completion_tokens":17,"total_tokens":28,"prompt_tokens_details":{"cached_tokens":3},"completion_tokens_details":{"reasoning_tokens":5}}}
+
+data: [DONE]
+

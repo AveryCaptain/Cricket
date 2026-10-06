@@ -1,0 +1,526 @@
+[
+  {
+    "type": "message_start",
+    "message_id": "gemini-long"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "000:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "001:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "002:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "003:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "004:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "005:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "006:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "007:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "008:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "009:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "010:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "011:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "012:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "013:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "014:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "015:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "016:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "017:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "018:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "019:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "020:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "021:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "022:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "023:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "024:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "025:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "026:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "027:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "028:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "029:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "030:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "031:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "032:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "033:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "034:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "035:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "036:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "037:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "038:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "039:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "040:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "041:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "042:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "043:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "044:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "045:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "046:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "047:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "048:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "049:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "050:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "051:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "052:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "053:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "054:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "055:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "056:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "057:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "058:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "059:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "060:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "061:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "062:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "063:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "064:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "065:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "066:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "067:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "068:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "069:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "070:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "071:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "072:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "073:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "074:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "075:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "076:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "077:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "078:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "079:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "080:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "081:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "082:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "083:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "084:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "085:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "086:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "087:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "088:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "089:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "090:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "091:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "092:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "093:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "094:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "095:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "096:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "097:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "098:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-long",
+    "text": "099:stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-stream-content-"
+  },
+  {
+    "type": "usage",
+    "usage": {
+      "input_tokens": 11,
+      "output_tokens": 17,
+      "cached_tokens": 3,
+      "reasoning_tokens": 5
+    }
+  },
+  {
+    "type": "finish",
+    "message_id": "gemini-long",
+    "finish": "stop",
+    "usage": {
+      "input_tokens": 11,
+      "output_tokens": 17,
+      "cached_tokens": 3,
+      "reasoning_tokens": 5
+    }
+  }
+]

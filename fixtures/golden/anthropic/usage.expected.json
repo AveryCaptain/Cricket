@@ -1,0 +1,40 @@
+[
+  {
+    "type": "message_start",
+    "message_id": "anthropic-usage"
+  },
+  {
+    "type": "usage",
+    "usage": {
+      "input_tokens": 11,
+      "output_tokens": 0,
+      "cached_tokens": 3,
+      "reasoning_tokens": 0
+    }
+  },
+  {
+    "type": "text_delta",
+    "message_id": "anthropic-usage",
+    "text": "Hello Cricket."
+  },
+  {
+    "type": "usage",
+    "usage": {
+      "input_tokens": 11,
+      "output_tokens": 17,
+      "cached_tokens": 3,
+      "reasoning_tokens": 0
+    }
+  },
+  {
+    "type": "finish",
+    "message_id": "anthropic-usage",
+    "finish": "stop",
+    "usage": {
+      "input_tokens": 11,
+      "output_tokens": 17,
+      "cached_tokens": 3,
+      "reasoning_tokens": 0
+    }
+  }
+]

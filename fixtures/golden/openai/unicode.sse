@@ -1,0 +1,10 @@
+data: {"id":"openai-unicode","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"role":"assistant"},"finish_reason":null}]}
+
+data: {"id":"openai-unicode","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"content":"鸣蛩 🦗\n第二行"},"finish_reason":null}]}
+
+data: {"id":"openai-unicode","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"content":" café"},"finish_reason":null}]}
+
+data: {"id":"openai-unicode","object":"chat.completion.chunk","choices":[{"index":0,"delta":{},"finish_reason":"stop"}]}
+
+data: [DONE]
+

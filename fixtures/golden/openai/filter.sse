@@ -1,0 +1,8 @@
+data: {"id":"openai-filter","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"role":"assistant"},"finish_reason":null}]}
+
+data: {"id":"openai-filter","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"content":"Hello Cricket."},"finish_reason":null}]}
+
+data: {"id":"openai-filter","object":"chat.completion.chunk","choices":[{"index":0,"delta":{},"finish_reason":"content_filter"}]}
+
+data: [DONE]
+

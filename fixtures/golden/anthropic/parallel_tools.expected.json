@@ -1,0 +1,77 @@
+[
+  {
+    "type": "message_start",
+    "message_id": "anthropic-parallel_tools"
+  },
+  {
+    "type": "usage",
+    "usage": {
+      "input_tokens": 11,
+      "output_tokens": 0,
+      "cached_tokens": 3,
+      "reasoning_tokens": 0
+    }
+  },
+  {
+    "type": "tool_call_start",
+    "message_id": "anthropic-parallel_tools",
+    "call_id": "call-0",
+    "name": "kb_search"
+  },
+  {
+    "type": "tool_call_args",
+    "call_id": "call-0",
+    "args_json_delta": "{\"query\":"
+  },
+  {
+    "type": "tool_call_args",
+    "call_id": "call-0",
+    "args_json_delta": "\"cricket\",\"top_k\":3}"
+  },
+  {
+    "type": "tool_call_end",
+    "call_id": "call-0",
+    "args_json": "{\"query\":\"cricket\",\"top_k\":3}"
+  },
+  {
+    "type": "tool_call_start",
+    "message_id": "anthropic-parallel_tools",
+    "call_id": "call-1",
+    "name": "web_search"
+  },
+  {
+    "type": "tool_call_args",
+    "call_id": "call-1",
+    "args_json_delta": "{\"query\":"
+  },
+  {
+    "type": "tool_call_args",
+    "call_id": "call-1",
+    "args_json_delta": "\"cricket\",\"top_k\":3}"
+  },
+  {
+    "type": "tool_call_end",
+    "call_id": "call-1",
+    "args_json": "{\"query\":\"cricket\",\"top_k\":3}"
+  },
+  {
+    "type": "usage",
+    "usage": {
+      "input_tokens": 11,
+      "output_tokens": 17,
+      "cached_tokens": 3,
+      "reasoning_tokens": 0
+    }
+  },
+  {
+    "type": "finish",
+    "message_id": "anthropic-parallel_tools",
+    "finish": "tool_calls",
+    "usage": {
+      "input_tokens": 11,
+      "output_tokens": 17,
+      "cached_tokens": 3,
+      "reasoning_tokens": 0
+    }
+  }
+]

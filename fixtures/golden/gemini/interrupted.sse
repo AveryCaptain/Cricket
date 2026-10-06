@@ -1,0 +1,4 @@
+data: {"responseId":"gemini-interrupted","candidates":[{"index":0,"content":{"role":"model","parts":[]}}]}
+
+data: {"responseId":"gemini-interrupted","candidates":[{"index":0,"content":{"role":"model","parts":[{"text":"Hello Cricket."}]}}]}
+

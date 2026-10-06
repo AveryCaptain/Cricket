@@ -1,0 +1,27 @@
+[
+  {
+    "type": "message_start",
+    "message_id": "openai-unicode"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-unicode",
+    "text": "鸣蛩 🦗\n第二行"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-unicode",
+    "text": " café"
+  },
+  {
+    "type": "finish",
+    "message_id": "openai-unicode",
+    "finish": "stop",
+    "usage": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cached_tokens": 0,
+      "reasoning_tokens": 0
+    }
+  }
+]

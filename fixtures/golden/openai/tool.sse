@@ -1,0 +1,10 @@
+data: {"id":"openai-tool","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"role":"assistant"},"finish_reason":null}]}
+
+data: {"id":"openai-tool","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"id":"call-0","type":"function","function":{"name":"kb_search","arguments":"{\"query\":"}}]},"finish_reason":null}]}
+
+data: {"id":"openai-tool","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"function":{"arguments":"\"cricket\",\"top_k\":3}"}}]},"finish_reason":null}]}
+
+data: {"id":"openai-tool","object":"chat.completion.chunk","choices":[{"index":0,"delta":{},"finish_reason":"tool_calls"}]}
+
+data: [DONE]
+

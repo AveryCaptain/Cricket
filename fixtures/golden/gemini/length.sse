@@ -1,0 +1,6 @@
+data: {"responseId":"gemini-length","candidates":[{"index":0,"content":{"role":"model","parts":[]}}]}
+
+data: {"responseId":"gemini-length","candidates":[{"index":0,"content":{"role":"model","parts":[{"text":"Hello Cricket."}]}}]}
+
+data: {"responseId":"gemini-length","candidates":[{"index":0,"content":{"role":"model","parts":[]},"finishReason":"MAX_TOKENS"}],"usageMetadata":{"promptTokenCount":11,"candidatesTokenCount":17,"cachedContentTokenCount":3,"thoughtsTokenCount":5,"totalTokenCount":33}}
+

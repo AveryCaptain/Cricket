@@ -1,0 +1,17 @@
+[
+  {
+    "type": "message_start",
+    "message_id": "openai-interrupted"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-interrupted",
+    "text": "Hello Cricket."
+  },
+  {
+    "type": "error",
+    "message": "upstream interrupted before finish",
+    "retryable": true,
+    "provider": "openai"
+  }
+]

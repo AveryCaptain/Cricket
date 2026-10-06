@@ -1,0 +1,38 @@
+[
+  {
+    "type": "message_start",
+    "message_id": "openai-tool"
+  },
+  {
+    "type": "tool_call_start",
+    "message_id": "openai-tool",
+    "call_id": "call-0",
+    "name": "kb_search"
+  },
+  {
+    "type": "tool_call_args",
+    "call_id": "call-0",
+    "args_json_delta": "{\"query\":"
+  },
+  {
+    "type": "tool_call_args",
+    "call_id": "call-0",
+    "args_json_delta": "\"cricket\",\"top_k\":3}"
+  },
+  {
+    "type": "tool_call_end",
+    "call_id": "call-0",
+    "args_json": "{\"query\":\"cricket\",\"top_k\":3}"
+  },
+  {
+    "type": "finish",
+    "message_id": "openai-tool",
+    "finish": "tool_calls",
+    "usage": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cached_tokens": 0,
+      "reasoning_tokens": 0
+    }
+  }
+]

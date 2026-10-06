@@ -1,0 +1,8 @@
+data: {"responseId":"gemini-unicode","candidates":[{"index":0,"content":{"role":"model","parts":[]}}]}
+
+data: {"responseId":"gemini-unicode","candidates":[{"index":0,"content":{"role":"model","parts":[{"text":"鸣蛩 🦗\n第二行"}]}}]}
+
+data: {"responseId":"gemini-unicode","candidates":[{"index":0,"content":{"role":"model","parts":[{"text":" café"}]}}]}
+
+data: {"responseId":"gemini-unicode","candidates":[{"index":0,"content":{"role":"model","parts":[]},"finishReason":"STOP"}],"usageMetadata":{"promptTokenCount":11,"candidatesTokenCount":17,"cachedContentTokenCount":3,"thoughtsTokenCount":5,"totalTokenCount":33}}
+

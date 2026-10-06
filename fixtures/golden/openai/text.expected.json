@@ -1,0 +1,22 @@
+[
+  {
+    "type": "message_start",
+    "message_id": "openai-text"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "openai-text",
+    "text": "Hello Cricket."
+  },
+  {
+    "type": "finish",
+    "message_id": "openai-text",
+    "finish": "stop",
+    "usage": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cached_tokens": 0,
+      "reasoning_tokens": 0
+    }
+  }
+]

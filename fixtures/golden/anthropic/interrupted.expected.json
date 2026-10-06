@@ -1,0 +1,26 @@
+[
+  {
+    "type": "message_start",
+    "message_id": "anthropic-interrupted"
+  },
+  {
+    "type": "usage",
+    "usage": {
+      "input_tokens": 11,
+      "output_tokens": 0,
+      "cached_tokens": 3,
+      "reasoning_tokens": 0
+    }
+  },
+  {
+    "type": "text_delta",
+    "message_id": "anthropic-interrupted",
+    "text": "Hello Cricket."
+  },
+  {
+    "type": "error",
+    "message": "upstream interrupted before finish",
+    "retryable": true,
+    "provider": "anthropic"
+  }
+]

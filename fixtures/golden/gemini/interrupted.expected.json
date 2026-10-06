@@ -1,0 +1,17 @@
+[
+  {
+    "type": "message_start",
+    "message_id": "gemini-interrupted"
+  },
+  {
+    "type": "text_delta",
+    "message_id": "gemini-interrupted",
+    "text": "Hello Cricket."
+  },
+  {
+    "type": "error",
+    "message": "upstream interrupted before finish",
+    "retryable": true,
+    "provider": "gemini"
+  }
+]

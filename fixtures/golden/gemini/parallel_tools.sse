@@ -1,0 +1,8 @@
+data: {"responseId":"gemini-parallel_tools","candidates":[{"index":0,"content":{"role":"model","parts":[]}}]}
+
+data: {"responseId":"gemini-parallel_tools","candidates":[{"index":0,"content":{"role":"model","parts":[{"functionCall":{"id":"call-0","name":"kb_search","args":{"query":"cricket","top_k":3}}}]}}]}
+
+data: {"responseId":"gemini-parallel_tools","candidates":[{"index":0,"content":{"role":"model","parts":[{"functionCall":{"id":"call-1","name":"web_search","args":{"query":"cricket","top_k":3}}}]}}]}
+
+data: {"responseId":"gemini-parallel_tools","candidates":[{"index":0,"content":{"role":"model","parts":[]},"finishReason":"STOP"}],"usageMetadata":{"promptTokenCount":11,"candidatesTokenCount":17,"cachedContentTokenCount":3,"thoughtsTokenCount":5,"totalTokenCount":33}}
+
