@@ -1,8 +1,54 @@
-# M0 基线预检与待裁决报告
+# M0 基线交付与验收报告
 
 日期：2026-10-06（Asia/Shanghai）
 
-状态：未完成。按本阶段红线“发现文档内部矛盾 → 停止并在报告中列出，不许自行改契约”，已停止实现，等待契约裁决。没有新增业务代码、workspace、依赖或 CI；没有修改设计文档。
+状态：M0 实现及六项验收均已通过。代码提交 `58cd973` 的 Actions run `37436211765` 已完成，`core` 与 `windows` 两个 job 均为 `success`。下面的预检冲突记录保留为历史，已由用户裁决解除，不再阻塞 M0。
+
+## 交付摘要
+
+- Cargo workspace 共 11 个成员，保留文档规定的单向依赖与 release profile；其余领域 crate、FFI 和 server 仅职责骨架。
+- `cricket-protocol` 实现全部任务类型，以及裁决补充的 ModelRef、ProviderId、SessionState、AttachmentKind；每个类型均有完整 JSON/字段 round-trip 测试。
+- 最新用户裁决优先：Stage 保留 `tag="stage"` 与 CallingTool.name；KbScope 使用 `tag="scope"`；CoreEvent 使用 `tag="type"`，MessageStart 含可选 parent_event_id；所有 CricketError 变体含 String，使用邻接 `tag="kind", content="message"`；unit enum 输出 snake_case 字符串。
+- AgentSpec 采用用户新增的 `reports/m0-contract-ruling.md` 字段；Option 缺省为 None 并省略序列化、Vec 缺省为空且保留空数组、ModelPref.use_cache 缺省为 true；温度默认 0.7、max_output_tokens 默认 4096。
+- UniFFI 固定由 Cargo.lock 锁定为 0.28.3，仅 optional/ffi feature；未运行实际 UniFFI 构建。`cargo tree --workspace -i uniffi` 返回 `package ID specification uniffi did not match any packages`，确认默认图无 UniFFI。
+- OpenAI、Anthropic、Gemini、OpenAI-compatible 适配器；reqwest 默认功能关闭且启用 rustls，原生 SSE 由 eventsource-stream 解析；工具调用聚合、Reasoning 分流、usage 快照与最终账本均已实现。
+- 连接前 429/5xx/网络错误最多重试 3 次（初次请求另计），250ms 指数退避加 0–100ms jitter；按 ModelPref 降级；流开始后错误归一化为 retryable Error，终止流且不重发。
+- 30 个手工构造原生 SSE 文件和逐事件期望 JSON，每家 10 个；另有 OpenAI-compatible 回放用例，合计 golden 测试 31 个。测试通过 7-byte 分块解析，覆盖 UTF-8 分块、Reasoning、工具参数增量/整帧、多工具、中断、长流、usage 和结束原因。
+- Emitter 单一扇出接口与 16ms 定时合帧；控制事件先冲刷 delta，再直通；sink panic 转 CricketError::Internal。
+- clap CLI mock → gateway → Emitter → stdout JSON 行；真实调用须显式 --live 和 --model，凭据只读取环境变量，CI 无 live 调用。
+- Ubuntu CI 含 fmt、clippy、workspace tests、无 FFI protocol check、完整 Windows MSVC target check、cargo-deny 和 CLI smoke；Windows CI 含 workspace build 与 CLI smoke。macOS/UniFFI 基线留给 Phase 3。
+
+## 最新测试统计及命令证据
+
+共 82 个非空测试：protocol 34、gateway 策略 10、golden 31、Emitter 4、CLI 集成 3；全部通过，0 失败。
+
+| 验收 | 结果 | 输出证据 |
+|---|---|---|
+| `cargo test --workspace --offline --locked` | 通过 | `34 passed; 0 failed`、`10 passed; 0 failed`、`31 passed; 0 failed`、`4 passed; 0 failed`、`3 passed; 0 failed` |
+| `cargo clippy --workspace --all-targets --locked -- -D warnings` | 通过 | `Finished dev profile`，零告警 |
+| `cargo fmt --all -- --check` | 通过 | 退出码 0，无格式差异 |
+| `cargo deny check bans licenses` | 通过 | `bans ok, licenses ok`；offline 重跑结果相同 |
+| `cargo check -p cricket-protocol --no-default-features --locked` | 通过 | `Finished dev profile`，退出码 0 |
+| `cargo run -p cricket-cli --locked -- chat --provider mock --fixture fixtures/golden/openai/tool.sse` | 通过 | 打印 message_start、tool_call_start/args/end、message_end 和 stream_closed |
+| `cargo run -p cricket-cli --locked -- chat --provider mock --fixture fixtures/golden/gemini/reasoning.sse` | 通过 | reasoning_delta 与 text_delta 分离，message_end usage 为 input=11/output=17/cached=3/reasoning=5 |
+| `cargo build --workspace --locked` | Windows 本机通过 | `Finished dev profile`，退出码 0 |
+| `cargo check --workspace --target x86_64-pc-windows-msvc --locked` | Windows 本机与 Ubuntu CI 通过 | Ubuntu job 的 Windows type and dependency check 步骤成功 |
+| CI `core` + `windows` | 通过，两个 job 均 completed/success | https://github.com/AveryCaptain/Cricket/actions/runs/37436211765 ，head SHA：58cd973213e64b0732bf591aaa8ad511b4657c76 |
+
+补充 `cargo audit`：未报告漏洞，退出码 0；锁文件包含 optional UniFFI 链上的 bincode 1.3.3（RUSTSEC-2025-0141）与 paste 1.0.15（RUSTSEC-2024-0436）的停止维护提示。默认图不包含 UniFFI；Phase 3 前评估升级绑定版本并补双端验证，不屏蔽 advisory。
+
+## 边界与后续事项
+
+- 没有修改 docs/、prompts/、.gitattributes 或 README.md；工作树此前已有 prompts 的 11 个删除仍保留且未提交。
+- 直接第三方依赖均在白名单内，UniFFI 是本阶段明确要求的 optional 例外；所有版本锁入 Cargo.lock，无其他依赖引入。私有 publish=false workspace 的许可证声明未擅自选定；deny 仍检查全部第三方依赖许可，允许本地 path wildcard。
+- 导出/公开方法返回 Result 或携带 Result 的异步 future，生产路径没有 `.unwrap()`/`.expect()`；测试可使用失败即 panic 的断言。Default/serde 等标准派生 trait 按其既有签名实现。
+- Linux 的 MSVC check 使用 LLVM clang-cl、freestanding 内建函数及 ring 提供的 RING_CORE_NOSTDLIBINC 路径，生成真实目标对象；它是 check 门，不替代原生 Windows 编译/链接 smoke。没有新增 SDK 或 Cargo 第三方依赖。
+- SSE 文件结尾的空行是原生事件分隔符，不能按普通 Markdown 格式清理；未改 .gitattributes。
+- 未调用真实厂商服务，未写入任何凭据；mock CLI 与回放测试全部离线，策略集成测试只访问 127.0.0.1 临时端口。
+- 文档同步修订和 Phase 3 UniFFI 实际构建留给后续阶段；本报告和用户裁决作为 M0 实现依据。
+- 分支 `phase/m0-baseline`，代码和每个任务单元的 conventional commits 均已推送；最终报告与用户裁决文件同分支提交。代码核验对应上述 head SHA，报告提交不改变 Rust、依赖或 CI。
+
+## 历史预检
 
 ## 上下文与状态自检
 
@@ -43,7 +89,7 @@ abc21cf docs: Cricket 设计基线 v1.0 — 架构拓扑、双端通信契约、
 
 本阶段明确要求不写 UI、不引入 UniFFI 实际构建，并把 macOS job 留给 Phase 3；因此 `docs/04` 中的 Tauri spike、iOS/macOS CI 和服务端业务不会在本阶段实施。optional UniFFI 依赖由当前任务明确要求；其他白名单外依赖不添加。文档中的 `async_trait` 示例与公开 API 返回值会按当前任务的依赖白名单和 Result 要求处理，无需为已有明确指示再次请求授权。
 
-## 验收状态与测试统计
+## 历史阻塞时的验收状态
 
 测试用例：0 个新增、0 个运行；通过数不适用，M0 未通过验收。
 
