@@ -1,0 +1,53 @@
+name: M0 baseline
+on:
+  pull_request:
+  push:
+    branches: [main, phase/m0-baseline]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  core:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned Rust and check components
+        run: |
+          rustup show
+          rustup component add rustfmt clippy
+          rustup target add x86_64-pc-windows-msvc
+      - name: Format
+        run: cargo fmt --all -- --check
+      - name: Clippy
+        run: cargo clippy --workspace --all-targets --locked -- -D warnings
+      - name: Offline tests
+        run: cargo test --workspace --locked
+      - name: Default protocol without FFI
+        run: cargo check -p cricket-protocol --no-default-features --locked
+      - name: Windows type and dependency check
+        env:
+          CC_x86_64_pc_windows_msvc: clang-cl
+          AR_x86_64_pc_windows_msvc: llvm-ar
+          CFLAGS_x86_64_pc_windows_msvc: -ffreestanding -DRING_CORE_NOSTDLIBINC
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang llvm lld
+          cargo check --workspace --target x86_64-pc-windows-msvc --locked
+      - name: Dependency gates
+        run: |
+          cargo install cargo-deny --version 0.20.2 --locked
+          cargo deny check bans licenses
+      - name: CLI mock smoke
+        run: cargo run -p cricket-cli --locked -- chat --provider mock --fixture fixtures/golden/openai/tool.sse
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pinned Rust
+        run: rustup show
+      - name: Build smoke
+        run: cargo build --workspace --locked
+      - name: CLI mock smoke
+        run: cargo run -p cricket-cli --locked -- chat --provider mock --fixture fixtures/golden/anthropic/reasoning.sse
