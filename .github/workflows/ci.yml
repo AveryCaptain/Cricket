@@ -12,7 +12,7 @@ jobs:
   core:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Install pinned Rust and check components
         run: |
           rustup show
@@ -29,8 +29,8 @@ jobs:
       - name: Windows type and dependency check
         env:
           CC_x86_64_pc_windows_msvc: clang-cl
-          AR_x86_64_pc_windows_msvc: llvm-ar
-          CFLAGS_x86_64_pc_windows_msvc: -ffreestanding -DRING_CORE_NOSTDLIBINC
+          AR_x86_64_pc_windows_msvc: llvm-lib
+          CFLAGS_x86_64_pc_windows_msvc: /clang:-ffreestanding /DRING_CORE_NOSTDLIBINC
         run: |
           sudo apt-get update
           sudo apt-get install -y clang llvm lld
@@ -44,7 +44,7 @@ jobs:
   windows:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Pinned Rust
         run: rustup show
       - name: Build smoke
