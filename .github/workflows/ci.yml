@@ -29,7 +29,8 @@ jobs:
       - name: Windows type and dependency check
         env:
           AR_x86_64_pc_windows_msvc: llvm-ar
-          CFLAGS_x86_64_pc_windows_msvc: /clang:-ffreestanding /DRING_CORE_NOSTDLIBINC
+          # Use ring's compiler-builtin path without a Windows CRT in this check-only build.
+          CFLAGS_x86_64_pc_windows_msvc: /clang:-ffreestanding /clang:-fgnuc-version=4.2.1 /DRING_CORE_NOSTDLIBINC
         run: |
           sudo apt-get update
           sudo apt-get install -y clang llvm lld
