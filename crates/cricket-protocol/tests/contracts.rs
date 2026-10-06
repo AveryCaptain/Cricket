@@ -73,7 +73,11 @@ contract!(
     CricketError,
     json!({"kind":"internal","message":"panic"})
 );
-contract!(error_cancelled, CricketError, json!({"kind":"cancelled"}));
+contract!(
+    error_cancelled,
+    CricketError,
+    json!({"kind":"cancelled","message":"user cancelled"})
+);
 contract!(
     model_ref,
     ModelRef,

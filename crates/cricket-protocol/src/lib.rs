@@ -196,8 +196,8 @@ pub enum CricketError {
     SessionNotFound(String),
     #[error("工具执行失败: {0}")]
     Tool(String),
-    #[error("已取消")]
-    Cancelled,
+    #[error("已取消: {0}")]
+    Cancelled(String),
     #[error("内部错误: {0}")]
     Internal(String),
 }

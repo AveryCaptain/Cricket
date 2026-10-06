@@ -146,18 +146,15 @@ impl NormalizeState {
         args: &str,
         out: &mut Vec<GatewayEvent>,
     ) -> Result<(), CricketError> {
-        if !self.calls.contains_key(&index) {
+        if let std::collections::btree_map::Entry::Vacant(entry) = self.calls.entry(index) {
             if id.is_empty() || name.is_empty() {
                 return Err(protocol("tool first frame requires id/name"));
             }
-            self.calls.insert(
-                index,
-                Call {
-                    id: id.into(),
-                    name: name.into(),
-                    args: String::new(),
-                },
-            );
+            entry.insert(Call {
+                id: id.into(),
+                name: name.into(),
+                args: String::new(),
+            });
             out.push(GatewayEvent::ToolCallStart {
                 message_id: self.message_id.clone(),
                 call_id: id.into(),

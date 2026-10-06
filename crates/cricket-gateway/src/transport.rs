@@ -37,12 +37,20 @@ fn normalized_stream(provider: ProviderId, frames: Frames) -> GatewayStream {
                     }) {
                         Ok(events) => queued.extend(events.into_iter().map(Ok)),
                         Err(e) => {
-                            queued.push_back(Err(e));
+                            queued.push_back(Ok(GatewayEvent::Error {
+                                message: e.to_string(),
+                                retryable: true,
+                                provider: Some(provider_name(provider).into()),
+                            }));
                             ended = true;
                         }
                     },
                     Some(Err(e)) => {
-                        queued.push_back(Err(e));
+                        queued.push_back(Ok(GatewayEvent::Error {
+                            message: e.to_string(),
+                            retryable: true,
+                            provider: Some(provider_name(provider).into()),
+                        }));
                         ended = true;
                     }
                     None => {
@@ -234,13 +242,20 @@ fn delay(attempt: u32) -> Duration {
 }
 
 pub async fn stream_request(req: NormalizedRequest) -> Result<GatewayStream, CricketError> {
+    stream_with(req, endpoint).await
+}
+
+async fn stream_with<F>(req: NormalizedRequest, resolve: F) -> Result<GatewayStream, CricketError>
+where
+    F: Fn(&ModelRef) -> Result<(String, String), CricketError>,
+{
     let client = reqwest::Client::builder()
         .connect_timeout(Duration::from_secs(15))
         .build()
         .map_err(|_| CricketError::Network("HTTP client initialization failed".into()))?;
     let mut last = CricketError::Network("no available model".into());
     for model in model_chain(&req.models) {
-        let (url, key) = match endpoint(&model) {
+        let (url, key) = match resolve(&model) {
             Ok(x) => x,
             Err(e) => {
                 last = e;
@@ -383,5 +398,245 @@ mod tests {
                 .get("cache_control")
                 .is_none()
         );
+    }
+
+    fn request() -> NormalizedRequest {
+        NormalizedRequest {
+            models: ModelPref {
+                primary: ModelRef {
+                    provider: ProviderId::Openai,
+                    model: "primary".into(),
+                },
+                ..ModelPref::default()
+            },
+            text: "fixture input".into(),
+            system: None,
+            max_output_tokens: 2048,
+            tools: vec![],
+            images: vec![],
+        }
+    }
+
+    async fn server(replies: Vec<(u16, String)>) -> (String, tokio::task::JoinHandle<Vec<Value>>) {
+        use tokio::io::{AsyncReadExt, AsyncWriteExt};
+        let listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+        let url = format!("http://{}/chat/completions", listener.local_addr().unwrap());
+        let task = tokio::spawn(async move {
+            let mut bodies = Vec::new();
+            for (status, body) in replies {
+                let (mut socket, _) = listener.accept().await.unwrap();
+                let mut bytes = Vec::new();
+                let (header_end, length) = loop {
+                    let mut buffer = [0_u8; 4096];
+                    let n = socket.read(&mut buffer).await.unwrap();
+                    assert!(n > 0);
+                    bytes.extend_from_slice(&buffer[..n]);
+                    if let Some(position) = bytes.windows(4).position(|w| w == b"\r\n\r\n") {
+                        let header = String::from_utf8_lossy(&bytes[..position]);
+                        let length = header
+                            .lines()
+                            .find_map(|line| {
+                                line.to_ascii_lowercase()
+                                    .strip_prefix("content-length:")
+                                    .map(|n| n.trim().parse::<usize>().unwrap())
+                            })
+                            .unwrap();
+                        break (position + 4, length);
+                    }
+                };
+                while bytes.len() < header_end + length {
+                    let mut buffer = [0_u8; 4096];
+                    let n = socket.read(&mut buffer).await.unwrap();
+                    assert!(n > 0);
+                    bytes.extend_from_slice(&buffer[..n]);
+                }
+                bodies
+                    .push(serde_json::from_slice(&bytes[header_end..header_end + length]).unwrap());
+                let response=format!("HTTP/1.1 {status} Fixture\r\nContent-Type: text/event-stream\r\nContent-Length: {}\r\nConnection: close\r\n\r\n{body}",body.len());
+                socket.write_all(response.as_bytes()).await.unwrap();
+                socket.shutdown().await.unwrap();
+            }
+            bodies
+        });
+        (url, task)
+    }
+
+    fn completed_stream() -> String {
+        "data: {\"id\":\"m\",\"choices\":[{\"delta\":{\"content\":\"ok\"},\"finish_reason\":null}]}\n\ndata: {\"id\":\"m\",\"choices\":[{\"delta\":{},\"finish_reason\":\"stop\"}]}\n\ndata: [DONE]\n\n".into()
+    }
+
+    #[tokio::test]
+    async fn retries_retryable_status_before_stream() {
+        let (url, server) = server(vec![
+            (429, String::new()),
+            (503, String::new()),
+            (200, completed_stream()),
+        ])
+        .await;
+        let events = stream_with(request(), |_| {
+            Ok((url.clone(), "fixture-not-a-credential".into()))
+        })
+        .await
+        .unwrap()
+        .try_collect::<Vec<_>>()
+        .await
+        .unwrap();
+        assert!(matches!(
+            events.last(),
+            Some(GatewayEvent::Finish {
+                finish: FinishReason::Stop,
+                ..
+            })
+        ));
+        assert_eq!(server.await.unwrap().len(), 3);
+    }
+
+    #[tokio::test]
+    async fn retry_budget_is_three_then_next_model() {
+        let (url, server) = server(vec![
+            (500, String::new()),
+            (500, String::new()),
+            (500, String::new()),
+            (500, String::new()),
+            (200, completed_stream()),
+        ])
+        .await;
+        let mut req = request();
+        req.models.fallbacks.push(ModelRef {
+            provider: ProviderId::OpenaiCompatible,
+            model: "fallback".into(),
+        });
+        let events = stream_with(req, |_| {
+            Ok((url.clone(), "fixture-not-a-credential".into()))
+        })
+        .await
+        .unwrap()
+        .try_collect::<Vec<_>>()
+        .await
+        .unwrap();
+        assert_eq!(
+            events.first(),
+            Some(&GatewayEvent::ProviderSelected {
+                provider: ProviderId::OpenaiCompatible,
+                model: "fallback".into()
+            })
+        );
+        let bodies = server.await.unwrap();
+        assert_eq!(
+            bodies
+                .iter()
+                .map(|b| b["model"].as_str().unwrap())
+                .collect::<Vec<_>>(),
+            vec!["primary", "primary", "primary", "primary", "fallback"]
+        );
+    }
+
+    #[tokio::test]
+    async fn auth_failure_falls_back_without_retry() {
+        let (url, server) = server(vec![(401, String::new()), (200, completed_stream())]).await;
+        let mut req = request();
+        req.models.fallbacks.push(ModelRef {
+            provider: ProviderId::OpenaiCompatible,
+            model: "fallback".into(),
+        });
+        let _ = stream_with(req, |_| {
+            Ok((url.clone(), "fixture-not-a-credential".into()))
+        })
+        .await
+        .unwrap()
+        .try_collect::<Vec<_>>()
+        .await
+        .unwrap();
+        assert_eq!(server.await.unwrap().len(), 2);
+    }
+
+    #[tokio::test]
+    async fn started_stream_error_never_retries_or_falls_back() {
+        let body="data: {\"id\":\"m\",\"choices\":[{\"delta\":{\"content\":\"partial\"},\"finish_reason\":null}]}\n\ndata: {\"error\":{\"message\":\"overloaded\"}}\n\n";
+        let (url, server) = server(vec![(200, body.into())]).await;
+        let mut req = request();
+        req.models.fallbacks.push(ModelRef {
+            provider: ProviderId::OpenaiCompatible,
+            model: "fallback".into(),
+        });
+        let events = stream_with(req, |_| {
+            Ok((url.clone(), "fixture-not-a-credential".into()))
+        })
+        .await
+        .unwrap()
+        .try_collect::<Vec<_>>()
+        .await
+        .unwrap();
+        assert!(matches!(
+            events.last(),
+            Some(GatewayEvent::Error {
+                retryable: true,
+                ..
+            })
+        ));
+        assert_eq!(server.await.unwrap().len(), 1);
+    }
+
+    #[test]
+    fn malformed_frame_emits_retryable_error() {
+        let input = "data: {broken json}\n\n".into();
+        let events = futures::executor::block_on(
+            replay(ProviderId::Openai, input)
+                .unwrap()
+                .try_collect::<Vec<_>>(),
+        )
+        .unwrap();
+        assert!(matches!(
+            events.as_slice(),
+            [GatewayEvent::Error {
+                retryable: true,
+                ..
+            }]
+        ));
+    }
+
+    #[test]
+    fn capability_gating_and_native_request_shapes() {
+        let mut req = request();
+        req.models.reasoning_effort = Some("high".into());
+        req.tools
+            .push(json!({"name":"search","description":"search","parameters":{"type":"object"}}));
+        for provider in [
+            ProviderId::Openai,
+            ProviderId::Anthropic,
+            ProviderId::Gemini,
+        ] {
+            let body = request_body(
+                &req,
+                &ModelRef {
+                    provider,
+                    model: "fixture".into(),
+                },
+            )
+            .unwrap();
+            assert!(body.get("tools").is_some());
+            let adapter = adapter_for(provider).unwrap();
+            assert!(!adapter
+                .supports(&Capability::Other("future".into()))
+                .unwrap());
+            match provider {
+                ProviderId::Openai => {
+                    assert_eq!(body["reasoning_effort"], "high");
+                    assert_eq!(body["stream_options"]["include_usage"], true);
+                }
+                ProviderId::Anthropic => {
+                    assert_eq!(body["tools"][0]["input_schema"]["type"], "object");
+                    assert_eq!(body["thinking"]["budget_tokens"], 1024);
+                }
+                ProviderId::Gemini => {
+                    assert_eq!(
+                        body["generationConfig"]["thinkingConfig"]["includeThoughts"],
+                        true
+                    );
+                    assert!(body.get("cache_control").is_none());
+                }
+                _ => unreachable!(),
+            }
+        }
     }
 }
