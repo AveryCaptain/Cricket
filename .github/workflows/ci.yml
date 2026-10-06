@@ -34,7 +34,17 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y clang llvm lld
-          cargo check --workspace --target x86_64-pc-windows-msvc --locked
+          if cargo check --workspace --target x86_64-pc-windows-msvc --locked > "$RUNNER_TEMP/windows-check.log" 2>&1; then
+            cat "$RUNNER_TEMP/windows-check.log"
+          else
+            cat "$RUNNER_TEMP/windows-check.log"
+            diagnostic="$(tail -n 100 "$RUNNER_TEMP/windows-check.log")"
+            diagnostic="${diagnostic//'%'/'%25'}"
+            diagnostic="${diagnostic//$'\r'/'%0D'}"
+            diagnostic="${diagnostic//$'\n'/'%0A'}"
+            echo "::error title=Windows cross-check diagnostics::$diagnostic"
+            exit 1
+          fi
       - name: Dependency gates
         run: |
           cargo install cargo-deny --version 0.20.2 --locked

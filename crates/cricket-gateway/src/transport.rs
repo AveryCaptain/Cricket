@@ -35,7 +35,15 @@ fn normalized_stream(provider: ProviderId, frames: Frames) -> GatewayStream {
                             },
                         )
                     }) {
-                        Ok(events) => queued.extend(events.into_iter().map(Ok)),
+                        Ok(events) => {
+                            ended = events.iter().any(|event| {
+                                matches!(
+                                    event,
+                                    GatewayEvent::Finish { .. } | GatewayEvent::Error { .. }
+                                )
+                            });
+                            queued.extend(events.into_iter().map(Ok));
+                        }
                         Err(e) => {
                             queued.push_back(Ok(GatewayEvent::Error {
                                 message: e.to_string(),
@@ -250,6 +258,7 @@ where
     F: Fn(&ModelRef) -> Result<(String, String), CricketError>,
 {
     let client = reqwest::Client::builder()
+        .redirect(reqwest::redirect::Policy::none())
         .connect_timeout(Duration::from_secs(15))
         .build()
         .map_err(|_| CricketError::Network("HTTP client initialization failed".into()))?;
