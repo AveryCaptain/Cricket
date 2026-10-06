@@ -11,3 +11,6 @@ cricket-protocol = { path = "../cricket-protocol" }
 cricket-skills = { path = "../cricket-skills" }
 cricket-tools = { path = "../cricket-tools" }
 tokio = { version = "1", features = ["sync", "time"] }
+
+[dev-dependencies]
+tokio = { version = "1", features = ["macros", "rt", "test-util"] }
