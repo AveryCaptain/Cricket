@@ -1,5 +1,5 @@
 [graph]
-all-features = false
+all-features = true
 
 [licenses]
 confidence-threshold = 0.8
