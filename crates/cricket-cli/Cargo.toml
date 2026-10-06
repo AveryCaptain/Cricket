@@ -10,3 +10,5 @@ cricket-gateway = { path = "../cricket-gateway" }
 cricket-protocol = { path = "../cricket-protocol" }
 clap = { version = "4", features = ["derive"] }
 serde_json = "1"
+futures = "0.3"
+tokio = { version = "1", features = ["macros", "rt", "time"] }
