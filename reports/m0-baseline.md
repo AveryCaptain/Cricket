@@ -10,7 +10,7 @@
 - `cricket-protocol` 实现全部任务类型，以及裁决补充的 ModelRef、ProviderId、SessionState、AttachmentKind；每个类型均有完整 JSON/字段 round-trip 测试。
 - 最新用户裁决优先：Stage 保留 `tag="stage"` 与 CallingTool.name；KbScope 使用 `tag="scope"`；CoreEvent 使用 `tag="type"`，MessageStart 含可选 parent_event_id；所有 CricketError 变体含 String，使用邻接 `tag="kind", content="message"`；unit enum 输出 snake_case 字符串。
 - AgentSpec 采用用户新增的 `reports/m0-contract-ruling.md` 字段；Option 缺省为 None 并省略序列化、Vec 缺省为空且保留空数组、ModelPref.use_cache 缺省为 true；温度默认 0.7、max_output_tokens 默认 4096。
-- UniFFI 固定由 Cargo.lock 锁定为 0.28.3，仅 optional/ffi feature；未运行实际 UniFFI 构建。`cargo tree --workspace -i uniffi` 返回 `package ID specification uniffi did not match any packages`，确认默认图无 UniFFI。
+- UniFFI 遗留处理后由 Cargo.lock 锁定为 0.32.2，仅 optional/ffi feature；补齐受 feature 门控的 `setup_scaffolding!`，全 feature Rust 检查及测试已通过。未生成 Swift/iOS 构建产物；默认依赖图仍无 UniFFI。
 - OpenAI、Anthropic、Gemini、OpenAI-compatible 适配器；reqwest 默认功能关闭且启用 rustls，原生 SSE 由 eventsource-stream 解析；工具调用聚合、Reasoning 分流、usage 快照与最终账本均已实现。
 - 连接前 429/5xx/网络错误最多重试 3 次（初次请求另计），250ms 指数退避加 0–100ms jitter；按 ModelPref 降级；流开始后错误归一化为 retryable Error，终止流且不重发。
 - 30 个手工构造原生 SSE 文件和逐事件期望 JSON，每家 10 个；另有 OpenAI-compatible 回放用例，合计 golden 测试 31 个。测试通过 7-byte 分块解析，覆盖 UTF-8 分块、Reasoning、工具参数增量/整帧、多工具、中断、长流、usage 和结束原因。
@@ -35,7 +35,17 @@
 | `cargo check --workspace --target x86_64-pc-windows-msvc --locked` | Windows 本机与 Ubuntu CI 通过 | Ubuntu job 的 Windows type and dependency check 步骤成功 |
 | CI `core` + `windows` | 通过，两个 job 均 completed/success | https://github.com/AveryCaptain/Cricket/actions/runs/37436211765 ，head SHA：58cd973213e64b0732bf591aaa8ad511b4657c76 |
 
-补充 `cargo audit`：未报告漏洞，退出码 0；锁文件包含 optional UniFFI 链上的 bincode 1.3.3（RUSTSEC-2025-0141）与 paste 1.0.15（RUSTSEC-2024-0436）的停止维护提示。默认图不包含 UniFFI；Phase 3 前评估升级绑定版本并补双端验证，不屏蔽 advisory。
+补充 `cargo audit`：M0 初始锁文件曾包含 optional UniFFI 链上的 bincode 1.3.3（RUSTSEC-2025-0141）与 paste 1.0.15（RUSTSEC-2024-0436）。用户要求处理遗留后已升级 UniFFI 至 0.32.2，两个包均已移出锁文件，没有屏蔽 advisory。
+
+## 遗留处理（2026-10-06）
+
+- UniFFI 0.32.2 升级及 scaffolding 标记修复已提交；默认 feature 测试与全 feature 测试均为 82/82，JSON round-trip 不变。
+- `cargo check --workspace --all-features --locked` 通过；`cargo clippy --workspace --all-targets --all-features --locked -- -D warnings` 通过。
+- `cargo deny check bans licenses` 扩大为完整 feature 图，结果 `bans ok, licenses ok`，无告警；仅对已选定的六个 UniFFI 框架包精确允许 MPL-2.0，不给其他包放宽许可证范围。
+- 本机 cargo-audit 的内置 HTTP 更新曾遇到 GitHub 网络错误；系统 Git `fetch origin` 成功，数据库 HEAD/FETCH_HEAD 均为 `ef6173cbc5c50ec8166f9a5b28f07834144373ee`（2026-10-03）。`cargo audit --no-fetch --deny warnings` 退出码 0，零漏洞、零告警。CI 新增不带 no-fetch 的在线严格审计，独立验证数据库刷新。
+- CI 新增 optional UniFFI Rust 兼容性检查、全 feature 许可检查和 `cargo audit --deny warnings`。未新增 Swift 生成或 macOS 构建，Phase 3 双端产物验证仍需 macOS/Xcode。
+- `prompts/` 的删除属于用户既有工作树变更；已询问是否恢复，在收到确认前保留现状。没有把这些删除纳入提交。
+- docs/ 与 README 继续保持原样；契约裁决以 `reports/m0-contract-ruling.md` 和用户最新 Stage/KbScope/默认值裁决为准。同步修改受此前“不修改设计文档”约束，未擅自执行。
 
 ## 边界与后续事项
 
